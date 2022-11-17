@@ -85,9 +85,17 @@
             <div class="chat-message flex"> 
                 <div class="container-chat">
                     
-                    <div v-for="message in messages">
-                        <div v-if="message.status === 'sent'" class="message-sent bgGreen">
-                            <p>{{message.message}}</p>
+                    <div v-for="(message, index) in messages">
+                        <div v-if="message.status === 'sent'" class="message-sent bgGreen flex">
+                            <div>
+                                <p>{{message.message}}</p>
+                            </div>
+                            <div>
+                                <p class="arrow-menu" @click="removeMessage(index)"><i class="fa-solid fa-chevron-down"></i></p>
+                                <small>12.00</small>
+                            </div>
+                            
+                           
                         </div>
                         <div v-else class="message-received">
                             {{message.message}}

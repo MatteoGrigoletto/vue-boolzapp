@@ -128,12 +128,21 @@ img{
     justify-content: center;
     align-items: center;
 }
+
 .message-sent{
-    padding: 20px;
+    padding: 10px 10px;
     margin: 10px;
     margin-left: 444px;
     border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
+.message-sent small{
+   font-size: 10px;
+}
+.arrow-menu{
+    text-align: center;
+} 
 .message-received{
     padding: 20px;
     margin: 10px;

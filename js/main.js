@@ -171,7 +171,7 @@ const { createApp } = Vue
                 messages:[],
                 active: 0,
                 newMessage:'',
-            
+                
             }
         },
         methods:{
@@ -197,7 +197,11 @@ const { createApp } = Vue
                     this.messages.push(response);
                 }, 1000), 
                 this.newMessage = '';
-            }
+            },
+            removeMessage(index){
+                console.log(index)
+                this.messages.splice(index,1)
+            } 
         }
     }).mount('#app');
 
