@@ -189,7 +189,13 @@ const { createApp } = Vue
                     message: this.newMessage,
                     status: 'sent'
                 };
+                let response = {
+                    message: `ok!!!`
+                }
                 this.messages.push(newObject);
+                setTimeout(() => {
+                    this.messages.push(response);
+                }, 1000), 
                 this.newMessage = '';
             }
         }
