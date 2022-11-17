@@ -69,10 +69,10 @@
             <div class="user bg-grey">
                 <div class="user-slot">
                     <div class="box-img">
-                        <img src="img/avatar_io.jpg" alt="user-img">
+                        <img :src="`img/avatar${contacts[active].avatar}.jpg`" alt="user-img">
                     </div>
                     <div class="user-name">
-                        <p>Sofia</p>
+                        <p>{{contacts[active].name}}</p>
                         <small>Ultimo accesso oggi alle 12.00</small>
                     </div>
                 </div>       
