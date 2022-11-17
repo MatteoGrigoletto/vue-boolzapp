@@ -239,7 +239,7 @@ const { createApp } = Vue
                 messages:[],
                 active: 0,
                 newMessage:'',
-                
+                searchName: '',
             }
         },
         methods:{
@@ -269,7 +269,14 @@ const { createApp } = Vue
             removeMessage(index){
                 console.log(index)
                 this.messages.splice(index,1)
-            } 
+            },
+            filterList(contact) {
+                if(this.searchName == ``){
+                    return true;
+                }
+                return contact.name.toLowerCase().
+                startsWith(this.searchName.toLowerCase());
+              },
         }
     }).mount('#app');
 
