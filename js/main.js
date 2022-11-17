@@ -1,10 +1,10 @@
 `use strict`;
 
-const {createApp} = Vue;
+const { createApp } = Vue
 
     createApp({
-        data(){
-            return{
+        data() {
+            return {
                 contacts: [
                     {
                         name: 'Michele',
@@ -170,6 +170,6 @@ const {createApp} = Vue;
                 ],
             }
         }
-    }).mount(`#app`);
+    }).mount('#app');
 
 
