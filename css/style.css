@@ -132,7 +132,7 @@ img{
 .message-sent{
     padding: 10px 10px;
     margin: 10px;
-    margin-left: 444px;
+    margin-left: 600px;
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
@@ -148,7 +148,7 @@ img{
     margin: 10px;
     border-radius: 10px;
     background-color: white;
-    margin-right: 444px;
+    margin-right: 600px;
 }
 
 /* bar message */
@@ -171,4 +171,48 @@ img{
 }
 .bgGreen{
     background-color: #d5f9ba;
+}
+/* dropdown */
+.dropdown button{
+    border-radius: 10px;
+}
+.dropdown small{
+    display: block;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+}
+.dropdown-hover{
+    display: inline-block;
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    cursor:pointer;
+    border: none;
+}
+.dropdown-menu{
+    position: absolute;
+    display: none;
+    top:20%;
+    right: 10px;
+    min-width: 200px;
+    background: white;
+    box-shadow: 0 3px 2px rgba(0,0,0,0.3);
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-menu a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    border-top: solid 1px #e0e0e0;
+}
+.dropdown-menu a:hover{
+    background-color: #f0f0f0;
+    color: #323b40;
 }

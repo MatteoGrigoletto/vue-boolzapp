@@ -166,7 +166,75 @@ const { createApp } = Vue
                                 status: 'received'
                             }
                         ],
-                    }
+                    },
+                    {
+                        name: 'Federico',
+                        avatar: '_7',
+                        visible: true,
+                        messages: [
+                            {
+                                date: '10/01/2020 15:30:55',
+                                message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                                status: 'sent'
+                            },
+                            {
+                                date: '10/01/2020 15:50:00',
+                                message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                                status: 'received'
+                            }
+                        ],
+                    },
+                    {
+                        name: 'Cristiano',
+                        avatar: '_7',
+                        visible: true,
+                        messages: [
+                            {
+                                date: '10/01/2020 15:30:55',
+                                message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                                status: 'sent'
+                            },
+                            {
+                                date: '10/01/2020 15:50:00',
+                                message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                                status: 'received'
+                            }
+                        ],
+                    },
+                    {
+                        name: 'Gianluca',
+                        avatar: '_7',
+                        visible: true,
+                        messages: [
+                            {
+                                date: '10/01/2020 15:30:55',
+                                message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                                status: 'sent'
+                            },
+                            {
+                                date: '10/01/2020 15:50:00',
+                                message: 'Va bene, stasera la sento',
+                                status: 'received'
+                            }
+                        ],
+                    },
+                    {
+                        name: 'Antonio',
+                        avatar: '_7',
+                        visible: true,
+                        messages: [
+                            {
+                                date: '10/01/2020 15:30:55',
+                                message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                                status: 'sent'
+                            },
+                            {
+                                date: '10/01/2020 15:50:00',
+                                message: 'Va bene, stasera la sento',
+                                status: 'received'
+                            }
+                        ],
+                    },
                 ],
                 messages:[],
                 active: 0,

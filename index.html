@@ -22,10 +22,10 @@
                 <div class="user bg-grey">
                     <div class="user-slot">
                         <div class="box-img">
-                            <img src="img/avatar_io.jpg" alt="user-img">
+                            <img src="img/avatar_2.jpg" alt="user-img">
                         </div>
                         <div class="user-name">
-                            <p>Sofia</p>
+                            <p>Matteo</p>
                         </div>
                     </div>       
                     <div class="user-icon">
@@ -82,6 +82,7 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
+            <!-- container chat -->
             <div class="chat-message flex"> 
                 <div class="container-chat">
                     
@@ -90,8 +91,12 @@
                             <div>
                                 <p>{{message.message}}</p>
                             </div>
-                            <div>
-                                <p class="arrow-menu" @click="removeMessage(index)"><i class="fa-solid fa-chevron-down"></i></p>
+                            <div class="dropdown">
+                                <button class="arrow-menu dropdown-hover"><i class="fa-solid fa-chevron-down"></i></button>
+                                <div class="dropdown-menu">
+                                    <a href="#" @click="removeMessage(index)"> Eliminate <i class="fa-solid fa-sack-xmark"></i></a>
+                                    <a href="#" @click="removeMessage(index)"> Eliminate <i class="fa-solid fa-sack-xmark"></i></a>
+                                </div>
                                 <small>12.00</small>
                             </div>
                             
