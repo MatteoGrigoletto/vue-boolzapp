@@ -17,8 +17,57 @@
     </head>
     <body>
         
-        <div id="app">
-            
+        <div id="app" class="big-container">
+           <div class="box-30">
+                <div class="user">
+                    <div class="user-slot">
+                        <div class="box-img">
+                            <img src="img/avatar_io.jpg" alt="user-img">
+                        </div>
+                        <div class="user-name">
+                            <p>Sofia</p>
+                        </div>
+                    </div>       
+                    <div class="user-icon">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            <div class="notifications flex">
+                <div class="box-img">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div class="inf-text">
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <small> Attiva notifiche desktop</small>
+                </div>
+            </div>
+            <div class="search-bar">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text">
+            </div>
+            <div class="user-list">
+                <div class="user" v-for="contact in contacts">
+                    <div class="user-slot">
+                        <div class="box-img">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="user-img">
+                        </div>
+                        <div class="user-name">
+                            <p>{{contact.name}}</p>
+                            <small>Ultimo messaggio inviato</small>
+                        </div>
+                    </div>    
+                    <div class="date">
+                        <small>12.00</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="box-70">
+ciao
+           </div>
 
         </div>
 

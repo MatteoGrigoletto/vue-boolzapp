@@ -6,4 +6,107 @@
 body{
     background:linear-gradient(to bottom, #009688 10%,#d7dbd7 0%);
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.flex{
+    display: flex;
+    flex-wrap: nowrap;
+}
+/* contaienr */
+.big-container{
+    width: calc(100% - 200px);
+    height: calc(100% - 30px);
+    display: flex;
+    background-color: white;
+    border: 1px solid black;
+}
+.box-30{
+    width: 30%;
+    background-color: #d7dbd7;
+}
+.box-70{
+    width: 70%;
+    background-color:black;
+}
+.box-img{
+    width: 50px;
+    height: 50px;
+}
+
+/* slide bar*/
+.box-30 > div{
+    width: 100%;
+    border: 1px solid black;
+}
+.user{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+    }
+.user > div{
+    width: 50%;
+}
+.box-img img{
+    border-radius: 100%;
+}
+.user-slot{
+    display: flex;
+    align-items: center;
+}
+.user-icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.user-icon i{
+    padding: 0px 15px;
+}
+/* notifications */
+.notifications{
+    background-color: #8edafc;
+    align-items: center;
+    padding: 10px;
+}
+.notifications .box-img{
+    background-color: white;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 50px;
+    color: #8edafc;
+}
+.inf-text{
+    padding-left: 10px;
+}
+.inf-text small{
+    text-decoration: underline;
+}
+/* search-bar */
+
+.search-bar input{
+    width: calc(100% - 80px);
+    padding: 10px 0px;
+}
+/* button */
+.search-bar{
+    padding: 5px;
+}
+.search-bar button{
+    padding: 10px 30px;
+}
+
+/* user list */
+
+.date{
+    text-align: end;
+}
+.user-list{
+    overflow-y: scroll;
 }
