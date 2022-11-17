@@ -18,6 +18,9 @@ img{
     display: flex;
     flex-wrap: nowrap;
 }
+.column{
+    flex-direction: column;
+}
 /* contaienr */
 .big-container{
     width: calc(100% - 200px);
@@ -28,11 +31,10 @@ img{
 }
 .box-30{
     width: 30%;
-    background-color: #d7dbd7;
 }
 .box-70{
     width: 70%;
-    background-color:black;
+    
 }
 .box-img{
     width: 50px;
@@ -42,7 +44,7 @@ img{
 /* slide bar*/
 .box-30 > div{
     width: 100%;
-    border: 1px solid black;
+    
 }
 .user{
     display: flex;
@@ -97,6 +99,7 @@ img{
 /* button */
 .search-bar{
     padding: 5px;
+    background-color: white;
 }
 .search-bar button{
     padding: 10px 30px;
@@ -109,4 +112,29 @@ img{
 }
 .user-list{
     overflow-y: scroll;
+    background-color: white;
+    height: calc(100% - 190px);
+}
+
+/* box-70 chat message */
+.chat-message{
+    flex-grow: 1;
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+.bar-message{
+    padding: 15px 5px;
+}
+.bar-message  .message-text{
+    flex-grow: 1;
+}
+.bar-message input{
+    width: 100%;
+    padding: 10px 0px;
+}
+.bar-message i{
+    padding: 10px 30px;
+}
+.bg-grey{
+    background-color: #eaeaea;
 }
