@@ -95,10 +95,13 @@
                   </div>
                 </div>      
             </div>
+            <!-- bar message -->
             <div class="bar-message flex bg-grey">
                 <div><i class="fa-regular fa-face-smile"></i></div>
                 <div class="message-text">
-                    <input type="text">
+                    <form @submit.prevent="insertMessage">
+                        <input type="text" v-model="newMessage">
+                    </form>
                 </div>
                 <div><i class="fa-solid fa-microphone"></i></div>
             </div>
