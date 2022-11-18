@@ -1,0 +1,54 @@
+/* color */
+.bg-user{
+    background-color: var(--user_select) 
+}
+.bg-send-mess{
+    background-color: var(--send_message);
+}
+.bg-rec-mess{
+    background-color: var(--received_message);
+}
+/* dropdown */
+.dropdown button{
+    border-radius: 10px;
+}
+.dropdown small{
+    display: block;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+}
+.dropdown-hover{
+    display: inline-block;
+    padding: 10px;
+    background-color: transparent;
+    color: var(--dropdown-text);
+    cursor:pointer;
+    border: none;
+}
+.dropdown-menu{
+    position: absolute;
+    display: none;
+    top:20%;
+    right: 10px;
+    min-width: 200px;
+    background: var(--dropdown-bg);
+    box-shadow: 0 3px 2px rgba(0,0,0,0.3);
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-menu a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    border-top: solid 1px #e0e0e0;
+}
+.dropdown-menu a:hover{
+    background-color: var(--dropdown-hover-bg);
+    color: var(--dropdown-hover);
+}

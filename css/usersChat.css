@@ -1,0 +1,43 @@
+/* box-70 chat message */
+.container-chat{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+.chat-message{
+    flex-grow: 1;
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-message{
+    padding: 10px;
+    margin: 5px ;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.message-sent small{
+   font-size: 10px;
+}
+.arrow-menu{
+    text-align: center;
+} 
+
+/* bar message */
+.bar-message{
+    padding: 15px 5px;
+}
+.bar-message  .message-text{
+    flex-grow: 1;
+}
+.bar-message input{
+    width: 100%;
+    padding: 10px 0px;
+}
+.bar-message i{
+    padding: 10px 30px;
+}
