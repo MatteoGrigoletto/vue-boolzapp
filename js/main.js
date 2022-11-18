@@ -239,7 +239,7 @@ const { createApp } = Vue
                 active: 0,
                 newMessage:'',
                 searchName: '',
-                chuck:``,
+                chuck:[],
             }
         },
         methods:{
@@ -251,17 +251,18 @@ const { createApp } = Vue
             // di conseguenza la risposta automatica dell'algoritmo dopo un secondo
             insertMessage(){     
                 let newObject = {
-                    date: '',
+                    date: new Date (),
                     message: this.newMessage,
-                    status: 'sent'
+                    status: 'sent',
                 };
                 let response = {
-                    message: this.chuck,
+                    message: this.chuck[0].message,
                 };
                 this.contacts[this.active].messages.push(newObject);
                 setTimeout(() => {
                     this.contacts[this.active].messages.push(response);
                 }, 1000), 
+                
                 this.newMessage = '';
             },
             // rimozione messaggio dalla lista
@@ -280,16 +281,25 @@ const { createApp } = Vue
             //  metodo per selezionare l'ultimo messaggio presente in ogni oggetto.
               lastMessage(contact){
                 return contact.messages[contact.messages.length - 1]
-              }
+              },
+            //   metodo per formattare la data
+            formatMessageData(data){
+                return moment(data, "DD/MM/YYYY hh:mm:ss").fromNow();
+            }
         },
         // permette a Chuck Norris di assumere il controllo della messaggistica tramite API
         created(){
             axios.get('https://api.chucknorris.io/jokes/random')
             .then((response) => {
-                console.log(response.data.value)
-                this.chuck = response.data.value
-
+                let chuckObject = {
+                    date:new Date(),
+                    message:response.data.value,
+                    status:'received,'
+                }
+                this.chuck.push(chuckObject);
+                console.log(this.chuck)
             });
+            moment.locale('it');
         }
     }).mount('#app');
 

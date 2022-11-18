@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- cdn vue -->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- cdn momentjs -->
+        <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
         <!-- cdn axios -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <!--link css  -->
@@ -67,7 +69,7 @@
                         </div>
                     </div>    
                     <div class="date">
-                        <small>12.00</small>
+                        <small>{{formatMessageData(lastMessage(contact).date)}}</small>
                     </div>
                 </div>
             </div>
@@ -81,7 +83,7 @@
                     </div>
                     <div class="user-name">
                         <p>{{contacts[active].name}}</p>
-                        <small>Ultimo accesso oggi alle 12.00</small>
+                        <small>Ultimo accesso{{formatMessageData(lastMessage(contacts[active]).date)}}</small>
                     </div>
                 </div>       
                 <div class="user-icon">
@@ -104,7 +106,7 @@
                                     <a href="#" @click="removeMessage(index)"> Eliminate <i class="fa-solid fa-sack-xmark"></i></a>
                                     <a href="#" @click="removeMessage(index)"> Eliminate <i class="fa-solid fa-sack-xmark"></i></a>
                                 </div>
-                                <small>12.00</small>
+                                <small>{{formatMessageData(message.date)}}</small>
                             </div>   
                         </div>
                        <div v-else class="bg-rec-mess user-message">

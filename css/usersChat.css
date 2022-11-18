@@ -22,6 +22,8 @@
 
 .message-sent small{
    font-size: 10px;
+   text-align: center;
+   width: 60px;
 }
 .arrow-menu{
     text-align: center;

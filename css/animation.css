@@ -14,11 +14,13 @@
 }
 .dropdown small{
     display: block;
+    width: 100px;
 }
 .dropdown{
     position: relative;
     display: inline-block;
     z-index: 10;
+    text-align: center;
 }
 .dropdown-hover{
     display: inline-block;

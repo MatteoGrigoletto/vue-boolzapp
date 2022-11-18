@@ -60,6 +60,8 @@
 
 .date{
     text-align: end;
+    width: 200px;
+  
 }
 .user-list{
     overflow-y: scroll;
