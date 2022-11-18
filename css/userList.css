@@ -10,6 +10,7 @@
 }
 .box-img img{
     border-radius: 100%;
+    width: 50px;
 }
 .user-slot{
     display: flex;

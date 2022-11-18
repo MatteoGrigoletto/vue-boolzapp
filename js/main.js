@@ -239,7 +239,7 @@ const { createApp } = Vue
                 active: 0,
                 newMessage:'',
                 searchName: '',
-  
+                chuck:``,
             }
         },
         methods:{
@@ -256,7 +256,7 @@ const { createApp } = Vue
                     status: 'sent'
                 };
                 let response = {
-                    message: `ok!!!`
+                    message: this.chuck,
                 };
                 this.contacts[this.active].messages.push(newObject);
                 setTimeout(() => {
@@ -281,6 +281,15 @@ const { createApp } = Vue
               lastMessage(contact){
                 return contact.messages[contact.messages.length - 1]
               }
+        },
+        // permette a Chuck Norris di assumere il controllo della messaggistica tramite API
+        created(){
+            axios.get('https://api.chucknorris.io/jokes/random')
+            .then((response) => {
+                console.log(response.data.value)
+                this.chuck = response.data.value
+
+            });
         }
     }).mount('#app');
 
