@@ -236,21 +236,25 @@ const { createApp } = Vue
                         ],
                     },
                 ],
-                messages:[],
+                allMessages:[],
                 active: 0,
                 newMessage:'',
                 searchName: '',
+            
             }
         },
         methods:{
+            // metodo che mi permette di pushare su una nuova lista solamente  i messaggi di ogni utente
             userSelector(index){
-                this.messages = [];
+                this.allMessages = [];
                 let message = this.contacts[index].messages
                 for(let i = 0; i < message.length; i++){
-                    this.messages.push(message[i])
+                    this.allMessages.push(message[i])
                 };
                 this.active = index;
             },
+            // metodo per controllore se il messaggio e' inviato o ricevuto  e 
+            // di conseguenza la risposta automatica dell'algoritmo dopo un secondo
             insertMessage(){     
                 let newObject = {
                     date: '',
@@ -259,17 +263,19 @@ const { createApp } = Vue
                 };
                 let response = {
                     message: `ok!!!`
-                }
-                this.messages.push(newObject);
+                };
+                this.allMessages.push(newObject);
                 setTimeout(() => {
-                    this.messages.push(response);
+                    this.allMessages.push(response);
                 }, 1000), 
                 this.newMessage = '';
             },
+            // rimozione messaggio dalla lista
             removeMessage(index){
-                console.log(index)
-                this.messages.splice(index,1)
+                this.allMessages.splice(index,1)
             },
+            //  metodo che utlizzando un ciclo v-for e un v-show nel HTML permette di controllare se il nome inserito e' 
+            // presente nella lista e in caso di riscontro, nascondere gli oggetti non desiderati
             filterList(contact) {
                 if(this.searchName == ``){
                     return true;
@@ -277,6 +283,10 @@ const { createApp } = Vue
                 return contact.name.toLowerCase().
                 startsWith(this.searchName.toLowerCase());
               },
+            //  metodo per selezionare l'ultimo messaggio presente in ogni oggetto.
+              lastMessage(contact){
+                return contact.messages[contact.messages.length - 1]
+              }
         }
     }).mount('#app');
 
