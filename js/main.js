@@ -235,22 +235,16 @@ const { createApp } = Vue
                             }
                         ],
                     },
-                ],
-                allMessages:[],
+                ], 
                 active: 0,
                 newMessage:'',
                 searchName: '',
-            
+  
             }
         },
         methods:{
-            // metodo che mi permette di pushare su una nuova lista solamente  i messaggi di ogni utente
+            // metodo che mi permette di  modificare una variabile
             userSelector(index){
-                this.allMessages = [];
-                let message = this.contacts[index].messages
-                for(let i = 0; i < message.length; i++){
-                    this.allMessages.push(message[i])
-                };
                 this.active = index;
             },
             // metodo per controllore se il messaggio e' inviato o ricevuto  e 
@@ -264,15 +258,15 @@ const { createApp } = Vue
                 let response = {
                     message: `ok!!!`
                 };
-                this.allMessages.push(newObject);
+                this.contacts[this.active].messages.push(newObject);
                 setTimeout(() => {
-                    this.allMessages.push(response);
+                    this.contacts[this.active].messages.push(response);
                 }, 1000), 
                 this.newMessage = '';
             },
             // rimozione messaggio dalla lista
             removeMessage(index){
-                this.allMessages.splice(index,1)
+                this.contacts[this.active].messages.splice(index,1)
             },
             //  metodo che utlizzando un ciclo v-for e un v-show nel HTML permette di controllare se il nome inserito e' 
             // presente nella lista e in caso di riscontro, nascondere gli oggetti non desiderati

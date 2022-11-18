@@ -1,3 +1,5 @@
+@import "var-color.css";
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -14,12 +16,25 @@ img{
     width: 100%;
     display: block;
 }
+i,button{
+    cursor: pointer;
+}
 .flex{
     display: flex;
     flex-wrap: nowrap;
 }
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
 .column{
     flex-direction: column;
+    flex-wrap: nowrap;
+}
+.flex-bet{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 /* contaienr */
 .big-container{
@@ -41,7 +56,7 @@ img{
     height: 50px;
 }
 .container-chat{
-    width: calc(100% - 80px);
+    width: calc(100% - 200px);
     height: calc(100% - 80px);
     
 }
@@ -57,9 +72,7 @@ img{
     align-items: center;
     padding: 10px 5px;
     }
-.user > div{
-    width: 50%;
-}
+
 .box-img img{
     border-radius: 100%;
 }
@@ -121,6 +134,12 @@ img{
 }
 
 /* box-70 chat message */
+.container-chat{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
 .chat-message{
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
@@ -129,27 +148,19 @@ img{
     align-items: center;
 }
 
-.message-sent{
-    padding: 10px 10px;
-    margin: 10px;
-    margin-left: 600px;
+.user-message{
+    padding: 10px;
+    margin: 5px ;
     border-radius: 10px;
-    justify-content: space-between;
-    align-items: center;
+    width: 250px;
 }
+
 .message-sent small{
    font-size: 10px;
 }
 .arrow-menu{
     text-align: center;
 } 
-.message-received{
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: white;
-    margin-right: 600px;
-}
 
 /* bar message */
 .bar-message{
@@ -166,11 +177,14 @@ img{
     padding: 10px 30px;
 }
 /* color */
-.bg-grey{
-    background-color: #eaeaea;
+.bg-user{
+    background-color: var(--user_select) 
 }
-.bgGreen{
-    background-color: #d5f9ba;
+.bg-send-mess{
+    background-color: var(--send_message);
+}
+.bg-white{
+    background-color: white;
 }
 /* dropdown */
 .dropdown button{
