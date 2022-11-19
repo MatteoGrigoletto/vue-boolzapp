@@ -4,11 +4,13 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
+}
+.user > .user-slot{
+    width: 80%;
 }
 .box-img img{
     border-radius: 100%;
-    width: 50px;
 }
 .user-slot{
     display: flex;
@@ -18,24 +20,22 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-   
 }
 .user-icon i{
     padding: 0px 10px;
-
 }
 /* notifications */
 .notifications{
     background-color: var(--bg_notification);
     align-items: center;
     padding: 10px;
-    height: 60px;
+    height: 50px;
 }
 .notifications .box-img{
     background-color: var(--bg_logo_notification);
     border-radius: 100%;
     text-align: center;
-    line-height: 50px;
+    line-height: 30px;
     color: var(--color_logo);
 }
 .inf-text{
@@ -47,27 +47,31 @@
 /* search-bar */
 
 .search-bar input{
-    width: calc(100% - 80px);
-    padding: 10px 0px;
+    width: calc(100% - 75px);
+    padding: 3px 0px;
 }
 /* button */
 .search-bar{
-    padding: 5px;
     height: 50px;
+    line-height: 50px;
     background-color: var(--search_bar);
+    padding: 0px 5px;
 }
 .search-bar button{
-    padding: 10px 30px;
+    padding: 3px 30px;
 }
 /* user list */
 
 .date{
     text-align: end;
-    width: 200px;
+    width: 100px;
 }
 .user-list{
     overflow-y: scroll;
-    height: calc(100% - 170px);
+    height: calc(100% - 150px);
     background-color: var(--bg_user_list);
+}
+.user-name{
+    padding-left: 5px;
 }
 

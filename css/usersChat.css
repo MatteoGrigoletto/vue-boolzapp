@@ -4,7 +4,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     width: calc(100% - 60px);
-
 }
 .chat-message{
     flex-grow: 1;
@@ -21,12 +20,6 @@
     border-radius: 10px;
     width: 200px;
 }
-
-.message-sent small{
-   font-size: 10px;
-   text-align: center;
-   width: 60px;
-}
 .arrow-menu{
     text-align: center;
 } 
@@ -41,6 +34,7 @@
 .bar-message input{
     width: 100%;
     padding: 3px 0px;
+    font-size: 0.5rem;
 }
 .bar-message i{
     padding: 0px 20px;

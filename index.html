@@ -29,7 +29,7 @@
             <!-- section for users list and search users -->
            <div class="box-30 column">
             <!-- nav bar for user -->
-                <div class="user bg-user">
+                <div class="user /  bg-user">
                     <div class="user-slot">
                         <div class="box-img">
                             <img src="img/avatar_2.jpg" alt="user-img">
@@ -60,7 +60,7 @@
                 <input type="text" v-model="searchName">
             </div>
             <!-- user list with v-for -->
-            <div class="user-list column " >
+            <div class="user-list / column " >
                 <div class="user" v-for="(contact, index) in contacts" @click="userSelector(index)"
                  v-show="filterList(contact)" :class="{'bg-user' : index === active}">
                     <div class="user-slot">
@@ -96,7 +96,7 @@
                     <i class="fa-solid fa-paperclip"></i>
 <!-- new user -->
                     <div class="dropdown z-index">
-                        <button class="arrow-menu dropdown-hover"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <button class="arrow-menu / dropdown-hover"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                         
                         <div class="dropdown-menu form-new-user">
                             <h3>Aggiungi un utente</h3>
@@ -112,12 +112,12 @@
             <div class="chat-message flex"> 
                 <div class="container-chat">   
                     <div v-for="(message, index ) in contacts[active].messages" :class="{'flex-end' : message.status === 'sent'}">
-                        <div v-if="message.status === 'sent'"  class="user-message bg-send-mess flex-bet">
+                        <div v-if="message.status === 'sent'"  class="user-message / bg-send-mess / flex-bet">
                             <div>
                                 <p>{{message.message}}</p>
                             </div>
                             <div class="dropdown">
-                                <button class="arrow-menu dropdown-hover"><i class="fa-solid fa-chevron-down"></i></button>
+                                <button class="arrow-menu / dropdown-hover"><i class="fa-solid fa-chevron-down"></i></button>
                                 <div class="dropdown-menu">
                                     <a href="#" @click="removeMessage(index)"> Eliminate <i class="fa-solid fa-sack-xmark"></i></a>
                                     <a href="#" @click="removeMessage(index)"> Eliminate <i class="fa-solid fa-sack-xmark"></i></a>
@@ -125,7 +125,7 @@
                                 <small>{{formatMessageData(message.date)}}</small>
                             </div>   
                         </div>
-                       <div v-else class="bg-rec-mess user-message">
+                       <div v-else class="bg-rec-mess / user-message / flex-bet">
                             <div>
                                 <p>{{message.message}}</p>
                             </div>
