@@ -23,7 +23,7 @@
         <!-- creazione contenitore vue3 -->
         <div id="app" class="big-container">
             <!-- section for users list and search users -->
-           <div class="box-30">
+           <div class="box-30 column">
             <!-- nav bar for user -->
                 <div class="user bg-user">
                     <div class="user-slot">
@@ -56,7 +56,7 @@
                 <input type="text" v-model="searchName">
             </div>
             <!-- user list with v-for -->
-            <div class="user-list" >
+            <div class="user-list column " >
                 <div class="user" v-for="(contact, index) in contacts" @click="userSelector(index)"
                  v-show="filterList(contact)" :class="{'bg-user' : index === active}">
                     <div class="user-slot">
@@ -90,7 +90,15 @@
                 <div class="user-icon">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-paperclip"></i>
-                    <i @click="" class="fa-solid fa-ellipsis-vertical"></i>
+<!-- new user -->
+                    <div class="dropdown z-index">
+                        <button class="arrow-menu dropdown-hover"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <div class="dropdown-menu form-new-user">
+                            <form @submit.prevent="newName" >
+                                <input v-model="newUser" placeholder="Inserisci il nome del nuovo utente"></input>
+                            </form>   
+                        </div>      
+                    </div>        
                 </div>
             </div>
             <!-- container chat -->

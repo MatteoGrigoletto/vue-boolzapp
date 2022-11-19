@@ -239,6 +239,7 @@ const { createApp } = Vue
                 active: 0,
                 newMessage:'',
                 searchName: '',
+                newUser:'',
                 chuck:[],
                 newDate: new Date(),
             }
@@ -284,18 +285,45 @@ const { createApp } = Vue
               },
             //  metodo per selezionare l'ultimo messaggio presente in ogni oggetto.
               lastMessage(contact){
-                return contact.messages[contact.messages.length - 2]
+                return contact.messages[contact.messages.length - 1]
               },
             //   metodo per formattare la data
             formatMessageData(data){
                 return moment(data, "DD/MM/YYYY hh:mm:ss").fromNow();
             },
+            // funzione per la creazione di un nuovo oggetto utente con i rispettivi dati e dei messaggi di presentazione 
+            newName(){
+                console.log(this.newUser)
+                let newUtent = {
+                    name: this.newUser,
+                    avatar: '_2',
+                    visible: true,
+                    messages: [
+                        {
+                            date: this.newDate,
+                            message: 'I messaggi inviati verranno visualizzati in questo modo',
+                            status: 'sent'
+                        },
+                        {
+                            date: this.newDate,
+                            message: 'Io invece sono un messaggio ricevuto',
+                            status: 'received'
+                        },
+                        {
+                            date: this.newDate,
+                            message: 'Buona chat!!!!',
+                            status: 'sent'
+                        }
+                    ],
+                };
+                this.contacts.push(newUtent)
+                this.newUser = ''
+            }
         },
         // permette a Chuck Norris di assumere il controllo della messaggistica tramite API
         created(){
             axios.get('https://api.chucknorris.io/jokes/random')
             .then((response) => {
-
                 let chuckObject = {
                     date:this.newDate,
                     message:response.data.value,
@@ -304,5 +332,5 @@ const { createApp } = Vue
                 this.chuck.push(chuckObject);
             });
             moment.locale('it');
-        }
+        },
     }).mount('#app');

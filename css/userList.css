@@ -1,6 +1,4 @@
-.box-30 > div{
-    width: 100%;
-}
+
 .user{
     display: flex;
     width: 100%;
@@ -20,16 +18,18 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+   
 }
 .user-icon i{
-    padding: 15px;
-    
+    padding: 0px 15px;
+
 }
 /* notifications */
 .notifications{
     background-color: var(--bg_notification);
     align-items: center;
     padding: 10px;
+    height: 60px;
 }
 .notifications .box-img{
     background-color: var(--bg_logo_notification);
@@ -45,6 +45,7 @@
     text-decoration: underline;
 }
 /* search-bar */
+
 .search-bar input{
     width: calc(100% - 80px);
     padding: 10px 0px;
@@ -52,6 +53,7 @@
 /* button */
 .search-bar{
     padding: 5px;
+    height: 50px;
     background-color: var(--search_bar);
 }
 .search-bar button{
@@ -62,10 +64,10 @@
 .date{
     text-align: end;
     width: 200px;
-  
 }
 .user-list{
     overflow-y: scroll;
+    height: calc(100% - 180px);
     background-color: var(--bg_user_list);
-    height: calc(100% - 190px);
 }
+
