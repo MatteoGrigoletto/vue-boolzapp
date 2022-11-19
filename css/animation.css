@@ -23,6 +23,9 @@
     z-index: 10;
     text-align: end;
 }
+.dropdown-menu.form-new-user{
+    text-align: center;
+}
 .dropdown-hover{
     display: inline-block;
     background-color: transparent;
@@ -102,4 +105,9 @@ i:hover:not(.notifications i),button:hover{
 .z-index{
     z-index: 20;
 }
+button,input{
+    border:none;
+    background-color: inherit;
+}
+
 

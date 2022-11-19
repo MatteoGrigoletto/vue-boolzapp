@@ -57,7 +57,7 @@
             <!-- search users bar -->
             <div class="search-bar">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input type="text" v-model="searchName">
+                <input type="text" v-model="searchName" placeholder="Cerca una chat">
             </div>
             <!-- user list with v-for -->
             <div class="user-list / column " >
@@ -141,7 +141,7 @@
                 <button><i class="fa-regular fa-face-smile"></i></button>
                 <div class="message-text">
                     <form @submit.prevent="insertMessage">
-                        <input type="text" v-model="newMessage">
+                        <input type="text" v-model="newMessage" placeholder="Inserisci un nuovo messaggio">
                     </form>
                 </div>
                 <button><i class="fa-solid fa-microphone"></i></button>
