@@ -4,7 +4,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5px;
+    padding: 5px;
 }
 .box-img img{
     border-radius: 100%;
@@ -21,7 +21,7 @@
    
 }
 .user-icon i{
-    padding: 0px 15px;
+    padding: 0px 10px;
 
 }
 /* notifications */
@@ -67,7 +67,7 @@
 }
 .user-list{
     overflow-y: scroll;
-    height: calc(100% - 180px);
+    height: calc(100% - 170px);
     background-color: var(--bg_user_list);
 }
 

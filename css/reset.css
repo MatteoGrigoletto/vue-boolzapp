@@ -4,13 +4,18 @@
     padding: 0;
 }
 body{
+    font-family: 'Dancing Script', cursive;
     background: var(--body_color);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.7rem;
 }
 img{
     width: 100%;
     display: block;
+}
+i{
+    font-size: 0.6rem;
 }

@@ -54,6 +54,36 @@
     background-color: var(--dropdown-hover-bg);
     color: var(--dropdown-hover);
 }
+/* btn dropdown */
+.btn-create{
+    margin-top: 20px;
+    border: 2px solid black;
+    font-size: 0.6rem;
+    padding: 5px;
+    background-color:grey;
+    color: #e0e0e0;
+}
+.form-new-user {
+    padding: 20px ;
+    width: 100px;
+    height: 200px;
+    border-radius: 20px;
+    width: 100%;
+}
+.form-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-new-user input{
+    height: 20px;
+    width: 150px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgb(251, 247, 247);
+    font-size: 7px;
+    margin-top: 20px;
+}
 /* hover */
 i:hover:not(.notifications i),button:hover{
     cursor: pointer;
@@ -62,4 +92,11 @@ i:hover:not(.notifications i),button:hover{
 /* z index */
 .z-index{
     z-index: 20;
+}
+
+/* animation buttons */
+.btn-create:hover{
+    background-color: #0df24e;
+    color: #000000;
+    border: 2px solid #070707 ;
 }

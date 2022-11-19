@@ -1,17 +1,4 @@
 /* box-70 chat message */
-.form-new-user {
-    padding: 20px ;
-    width: 300px;
-    height: 400px;
-    border-radius: 20px;
-}
-.form-new-user input{
-    height: 40px;
-    width: 250px;
-    border-radius: 20px;
-    text-align: center;
-    background-color: var(--dropdown-new-user);
-}
 .container-chat{
     display: flex;
     flex-direction: column;
@@ -46,15 +33,15 @@
 
 /* bar message */
 .bar-message{
-    padding: 15px 5px;
+    padding: 10px 5px;
 }
 .bar-message  .message-text{
     flex-grow: 1;
 }
 .bar-message input{
     width: 100%;
-    padding: 10px 0px;
+    padding: 3px 0px;
 }
 .bar-message i{
-    padding: 10px 30px;
+    padding: 0px 20px;
 }
