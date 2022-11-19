@@ -240,6 +240,7 @@ const { createApp } = Vue
                 newMessage:'',
                 searchName: '',
                 chuck:[],
+                newDate: new Date(),
             }
         },
         methods:{
@@ -250,10 +251,13 @@ const { createApp } = Vue
             // metodo per controllore se il messaggio e' inviato o ricevuto  e 
             // di conseguenza la risposta automatica dell'algoritmo dopo un secondo
             insertMessage(){     
+                
+                console.log(this.newDate)
                 let newObject = {
-                    date: new Date (),
+                    date: this.newDate,
                     message: this.newMessage,
                     status: 'sent',
+                    
                 };
                 let response = {
                     message: this.chuck[0].message,
@@ -280,27 +284,25 @@ const { createApp } = Vue
               },
             //  metodo per selezionare l'ultimo messaggio presente in ogni oggetto.
               lastMessage(contact){
-                return contact.messages[contact.messages.length - 1]
+                return contact.messages[contact.messages.length - 2]
               },
             //   metodo per formattare la data
             formatMessageData(data){
                 return moment(data, "DD/MM/YYYY hh:mm:ss").fromNow();
-            }
+            },
         },
         // permette a Chuck Norris di assumere il controllo della messaggistica tramite API
         created(){
             axios.get('https://api.chucknorris.io/jokes/random')
             .then((response) => {
+
                 let chuckObject = {
-                    date:new Date(),
+                    date:this.newDate,
                     message:response.data.value,
                     status:'received,'
                 }
                 this.chuck.push(chuckObject);
-                console.log(this.chuck)
             });
             moment.locale('it');
         }
     }).mount('#app');
-
-

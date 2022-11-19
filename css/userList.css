@@ -22,7 +22,8 @@
     align-items: center;
 }
 .user-icon i{
-    padding: 0px 15px;
+    padding: 15px;
+    
 }
 /* notifications */
 .notifications{

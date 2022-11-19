@@ -83,13 +83,14 @@
                     </div>
                     <div class="user-name">
                         <p>{{contacts[active].name}}</p>
-                        <small>Ultimo accesso{{formatMessageData(lastMessage(contacts[active]).date)}}</small>
+                        <small>Ultimo accesso: {{formatMessageData(lastMessage(contacts[active]).date)}}</small>
+                        
                     </div>
                 </div>       
                 <div class="user-icon">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-paperclip"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <i @click="" class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
             <!-- container chat -->
@@ -110,7 +111,12 @@
                             </div>   
                         </div>
                        <div v-else class="bg-rec-mess user-message">
-                        {{message.message}}
+                            <div>
+                                <p>{{message.message}}</p>
+                            </div>
+                            <div>
+                                <small>{{formatMessageData(message.date)}}</small>
+                            </div>
                        </div>
                   </div>
                 </div>      
