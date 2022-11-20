@@ -253,7 +253,6 @@ const { createApp } = Vue
             // di conseguenza la risposta automatica dell'algoritmo dopo un secondo
             insertMessage(){     
                 
-                console.log(this.newDate)
                 let newObject = {
                     date: this.newDate,
                     message: this.newMessage,
@@ -318,7 +317,7 @@ const { createApp } = Vue
                 };
                 this.contacts.push(newUtent)
                 this.newUser = ''
-            }
+            },
         },
         // permette a Chuck Norris di assumere il controllo della messaggistica tramite API
         created(){

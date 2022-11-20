@@ -73,6 +73,9 @@
     height: calc(100% - 140px);
     background-color: var(--bg_user_list);
 }
+.user-list .user{
+    max-height: 100px;
+}
 .user-name{
     padding-left: 5px;
 }
