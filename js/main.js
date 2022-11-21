@@ -242,9 +242,22 @@ const { createApp } = Vue
                 newUser:'',
                 chuck:[],
                 newDate: new Date(),
+                dropDownChat: false,
+                dropDownMessage: false,
             }
         },
         methods:{
+            // genera un numero randomico
+            getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            },
+            // metodi per attivare e disattivare i dropdown
+            showDropChat(){
+                this.dropDownChat = !this.dropDownChat;
+            },
+            showDropMessage(index){
+                document.getElementById(index).classList.toggle(`d-block`)
+            },
             // metodo che mi permette di  modificare una variabile
             userSelector(index){
                 this.active = index;
@@ -252,21 +265,20 @@ const { createApp } = Vue
             // metodo per controllore se il messaggio e' inviato o ricevuto  e 
             // di conseguenza la risposta automatica dell'algoritmo dopo un secondo
             insertMessage(){     
-                
                 let newObject = {
                     date: this.newDate,
                     message: this.newMessage,
-                    status: 'sent',
-                    
+                    status: 'sent', 
                 };
                 let response = {
-                    message: this.chuck[0].message,
+                        date:this.newDate,
+                        message: this.chuck[this.getRndInteger(0, this.chuck.length - 1)],
+                        status:'received,'
                 };
                 this.contacts[this.active].messages.push(newObject);
                 setTimeout(() => {
                     this.contacts[this.active].messages.push(response);
-                }, 1000), 
-                
+                }, 1000),       
                 this.newMessage = '';
             },
             // rimozione messaggio dalla lista
@@ -320,16 +332,20 @@ const { createApp } = Vue
             },
         },
         // permette a Chuck Norris di assumere il controllo della messaggistica tramite API
-        created(){
-            axios.get('https://api.chucknorris.io/jokes/random')
-            .then((response) => {
-                let chuckObject = {
-                    date:this.newDate,
-                    message:response.data.value,
-                    status:'received,'
-                }
-                this.chuck.push(chuckObject);
-            });
+        created() {
+            // Formatto l'ora nel formato italiano
             moment.locale('it');
+            // Uso axios per slavare 20 risposte diverse di Chuck in un array
+            for ( let i = 0; i <= 20; i++ ){
+                axios.get('https://api.chucknorris.io/jokes/random')
+                .then((response) => {             
+                this.chuck.push(response.data.value);
+                })
+            }
         },
     }).mount('#app');
+
+
+
+
+    
