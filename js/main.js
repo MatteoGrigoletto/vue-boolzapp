@@ -193,6 +193,7 @@ const { createApp } = Vue
                 newDate: new Date(),
                 dropDownChat: false,
                 dropDownMessage: false,
+                emoji:['😊','💕','😒','🤣'],
             }
         },
         methods:{
@@ -279,6 +280,14 @@ const { createApp } = Vue
                 this.contacts.push(newUtent)
                 this.newUser = ''
             },
+            scrollBottom(){
+                let chat = document.querySelector('.chat-message')
+                chat.scrollTop = chat.scrollHeight
+            }
+        },
+        
+        updated(){
+            this.scrollBottom();
         },
         // permette a Chuck Norris di assumere il controllo della messaggistica tramite API
         created() {
@@ -291,7 +300,7 @@ const { createApp } = Vue
                 this.chuck.push(response.data.value);
                 })
             }
-        },
+        }
     }).mount('#app');
 
 
